@@ -11,8 +11,8 @@ map.getPane('tilePane').style.filter =
 function getColor(elo) {
   if (!elo || elo === 0) return '#999'; // grey fallback
 
-  const min = 864;
-  const max = 1666;
+  const min = 862;
+  const max = 1663;
 
   // clamp + normalize
   const t = Math.max(0, Math.min(1, (elo - min) / (max - min)));
