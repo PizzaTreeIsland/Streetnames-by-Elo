@@ -58,6 +58,6 @@ Distribution of etymology data on OpenStreetMap over time since working on the p
 
 ## Thank you!
 
-Thank you to  EloEverything for the kind support and letting me use the data and for FairwayMapper for supplying me with an Overpass server that can handle querying all the named streets with their etymology tags. 
+Thank you to  EloEverything for the kind support and letting me use the data and to FairwayMapper for supplying me with an Overpass server that can handle querying all the named streets with their etymology tags. 
 
 
