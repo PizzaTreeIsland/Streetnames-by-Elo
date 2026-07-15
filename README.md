@@ -44,7 +44,6 @@ Some streets are named after several Wikidata items, for example Marie and Pierr
 I semi-regularly update the data manually, so every few weeks, your changes to OpenStreetMap or EloEverything will be updated to the map. The current dataset is from 07.07.2026. 
 
 ## Known issues or future feature ideas
-- Missing accessibility mode for people who can't distinguish between the colours I used. I imagine making a button that switches to a grey scale on a black background. 
 - Missing support for multiple values in the name:etymology:wikidata tag
 - It might be fun to have additional filters, maybe based on the Wikidata categories? "Show only roads named after historical military people"? I'm open to suggestions. 
 
