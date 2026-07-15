@@ -8,19 +8,24 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 map.getPane('tilePane').style.filter =
   'brightness(1) contrast(.8) grayscale(.9)';
 
+let isAccessibilityMode = false;
+
 function getColor(elo) {
   if (!elo || elo === 0) return '#999'; // grey fallback
 
   const min = 862;
   const max = 1663;
-
-  // clamp + normalize
   const t = Math.max(0, Math.min(1, (elo - min) / (max - min)));
 
-  // hue: 0 = red, 120 = green
-  const hue = t * 120;
-
-  return `hsl(${hue}, 70%, 50%)`;
+  if (isAccessibilityMode) {
+    // Interpolate lightness from 40% (medium grey) to 100% (bright white)
+    const lightness = 7 + (t * 93);
+    return `hsl(0, 0%, ${lightness}%)`;
+  } else {
+    // Hue: 0 = red, 120 = green
+    const hue = t * 120;
+    return `hsl(${hue}, 70%, 50%)`;
+  }
 }
 
 const MAP_TILE_SOURCE_URL = "https://elotiles.stickermap.org/StreetElos.pmtiles";
@@ -84,3 +89,47 @@ hitboxLayer.on('click', e => {
     .setContent(popup)
     .openOn(map);
 });
+
+const AccessibilityControl = L.Control.extend({
+  options: {
+    position: 'topleft'
+  },
+onAdd: function () {
+    const container = L.DomUtil.create('div', 'leaflet-bar leaflet-control');
+    const button = L.DomUtil.create('a', '', container);
+    
+    button.href = '#';
+    button.title = 'Toggle Accessibility Mode';
+    button.innerHTML = '\u25D1'; 
+    button.style.display = 'flex';
+    button.style.alignItems = 'center';
+    button.style.justifyContent = 'center';
+    button.style.textDecoration = 'none';
+    button.style.fontSize = '16px';
+    button.style.backgroundColor = '#fff';
+    button.style.width = '30px';
+    button.style.height = '30px';
+
+    L.DomEvent.disableClickPropagation(container);
+
+    L.DomEvent.on(button, 'click', function (e) {
+      L.DomEvent.preventDefault(e);
+      
+      isAccessibilityMode = !isAccessibilityMode;
+
+      const tilePane = map.getPane('tilePane');
+      if (isAccessibilityMode) {
+        tilePane.style.filter = 'brightness(.05) contrast(1) grayscale(.9)';
+      } else {
+        tilePane.style.filter = 'brightness(1) contrast(.8) grayscale(.9)';
+      }
+
+      // Redraw data layer to pick up the updated getColor values
+      visibleLayer.redraw();
+    });
+
+    return container;
+  }
+});
+
+map.addControl(new AccessibilityControl());
