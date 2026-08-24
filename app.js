@@ -13,8 +13,8 @@ let isAccessibilityMode = false;
 function getColor(elo) {
   if (!elo || elo === 0) return '#999'; // grey fallback
 
-  const min = 862;
-  const max = 1663;
+  const min = 863;
+  const max = 1658;
   const t = Math.max(0, Math.min(1, (elo - min) / (max - min)));
 
   if (isAccessibilityMode) {
