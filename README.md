@@ -51,7 +51,7 @@ I semi-regularly update the data manually, so every few weeks, your changes to O
 When gathering the data for this project from OpenStreetMap, I found two distinct areas of low hanging fruit when contributing name:etymology:wikidata tags to OpenStreetMap: 
 - Scandinavia: In direct comparison to other European countries, especially bordering Denmark, there are barely any of these tags in Sweden, Norway and Finland. I therefore created a [MapRoulette challenge](https://maproulette.org/browse/projects/63009) for people to add these tags in an organized fashion. 
 - Manila and surrounding area: In that area, a lot of housing has been built in larger developments, leading to a wealth of themed areas: There are areas named after big tech companies, metals and minerals, days of the week, or characters from the Bible. The list is endless. I have not made a MapRoulette challenge for Manila, but I encourage everyone to have a look and see if they find an area they would like to contribute to. 
-<img width="1400" height="700" alt="Progress7 7 26" src="https://github.com/user-attachments/assets/2aa1d813-6ca7-452f-af7b-08a5827cb870" />
+<img width="1400" height="700" alt="Progress24 8 26" src="https://github.com/user-attachments/assets/144b40eb-b532-46c0-b669-c37ddd9d62fc" />
 Distribution of etymology data on OpenStreetMap over time since working on the project
 
 
