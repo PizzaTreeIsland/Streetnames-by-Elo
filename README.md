@@ -41,7 +41,7 @@ In those cases, I need to manually add the additional Wikidata ID to the list. P
 Some streets are named after several Wikidata items, for example Marie and Pierre Curie. These are not yet supported. If you have any suggestions of how I can make that work visually, please let me know! 
 
 
-I semi-regularly update the data manually, so every few weeks, your changes to OpenStreetMap or EloEverything will be updated to the map. The current dataset is from 07.07.2026. 
+I semi-regularly update the data manually, so every few weeks, your changes to OpenStreetMap or EloEverything will be updated to the map. The current dataset is from 24.08.2026. 
 
 ## Known issues or future feature ideas
 - Missing support for multiple values in the name:etymology:wikidata tag
